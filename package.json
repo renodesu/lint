@@ -17,26 +17,25 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Harri Virtanen",
+  "author": "@renodesu",
   "license": "ISC",
   "files": [
     "eslint.config.js",
     "prettier.config.js"
   ],
   "peerDependencies": {
-    "eslint": "^9.11.1",
-    "@eslint/js": "^9.11.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-react": "^7.36.1",
+    "eslint": "^9.25.1",
+    "@eslint/js": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-unused-imports": "^4.1.4",
-    "prettier": "^3.3.3",
-    "typescript-eslint": "^8.7.0"
+    "prettier": "^3.5.3",
+    "typescript-eslint": "^8.31.0"
   },
   "devDependencies": {
-    "@types/eslint__js": "^8.42.3",
-    "@types/node": "^22.6.1",
-    "@types/react": "^18.3.8",
-    "typescript": "^5.6.2"
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.1.2",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "prettier-plugin-css-order": "^2.1.2"

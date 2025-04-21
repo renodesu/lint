@@ -1,5 +1,5 @@
 // import { copyFile, rmSync } from 'fs'
-// import { copyFile as asdf } from 'fs'
+import { copyFile as asdf } from 'fs'
 // console.log(copyFile)
 import path from 'path'
 
