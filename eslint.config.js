@@ -5,11 +5,23 @@ import tseslint from 'typescript-eslint'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import reactPlugin from 'eslint-plugin-react'
 import unusedImports from 'eslint-plugin-unused-imports'
+import importPlugin from 'eslint-plugin-import'
 // import globals from 'globals'
 
 export default tseslint.config(
   eslint.configs.recommended,
-  // ...tseslint.configs.recommended,
+  // // Import order
+  // {
+  //   files: ['**/*.{ts,tsx}'],
+  //   extends: [
+  //     importPlugin.flatConfigs.recommended,
+  //     importPlugin.flatConfigs.typescript,
+  //   ],
+  //   rules: {
+  //     'import/order': 'error',
+  //   },
+  // },
+
   ...tseslint.configs.recommendedTypeChecked,
   {
     languageOptions: {
@@ -17,6 +29,33 @@ export default tseslint.config(
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
+    },
+  },
+  // eslint-plugin-import
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      importPlugin.flatConfigs.recommended,
+      importPlugin.flatConfigs.typescript,
+    ],
+    rules: {
+      'import/order': [
+        2,
+        {
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+            'object',
+            'type',
+          ],
+          'newlines-between': 'always',
+          alphabetize: { order: 'asc' },
+        },
+      ],
     },
   },
   // import-order
@@ -37,6 +76,30 @@ export default tseslint.config(
           argsIgnorePattern: '^_',
         },
       ],
+      //
+      'sort-imports': [
+        'error',
+        {
+          ignoreDeclarationSort: true,
+        },
+      ],
+      // 'import/order': [
+      //   2,
+      //   {
+      //     groups: [
+      //       'builtin',
+      //       'external',
+      //       'internal',
+      //       'parent',
+      //       'sibling',
+      //       'index',
+      //       'object',
+      //       'type',
+      //     ],
+      //     'newlines-between': 'always',
+      //     alphabetize: { order: 'asc' },
+      //   },
+      // ],
     },
   },
   // React
